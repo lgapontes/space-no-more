@@ -1,29 +1,41 @@
 const VERSAO = '1.0';
 
 const ESPECIES = {
-  'Humano': {},
-  'Projeção': {},
-  'Sintético': {},
+  'Humano': {
+    detalhes: `Humanos são  daspldk psdk sapdk sapdo kaspodk aspodk aspodk apsodk aspdk aspodk sapodk aspodksaopdk sapokds. Spok osd ospad paosid spaodi sapodi sapodi sapodi\nCaracterísticas: Humanos aspodks dosd psaodi aspodi asopdi sapodi aspodi aspodi apsodi.\nPontos de Vida: 9`,
+  },
+  'Projeção': {
+    detalhes: `Projeções são  daspldk psdk sapdk sapdo kaspodk aspodk aspodk apsodk aspdk aspodk sapodk aspodksaopdk sapokds. Spok osd ospad paosid spaodi sapodi sapodi sapodi\nCaracterísticas: Humanos aspodks dosd psaodi aspodi asopdi sapodi aspodi aspodi apsodi.\nPontos de Vida: 9`,
+  },
+  'Sintético': {
+    detalhes: `Sintéticos são  daspldk psdk sapdk sapdo kaspodk aspodk aspodk apsodk aspdk aspodk sapodk aspodksaopdk sapokds. Spok osd ospad paosid spaodi sapodi sapodi sapodi\nCaracterísticas: Humanos aspodks dosd psaodi aspodi asopdi sapodi aspodi aspodi apsodi.\nPontos de Vida: 9`,
+  },
 };
 
 const ARQUETIPOS = {
   'Alquimancer': {
     'Doutrinas': ['Perceber matéria escura','Criar combustão','Criar área anti-vácuo','Teletransportar','Criar oxigênio'],
+    detalhes: 'Alquimancer',
   },
   'Armipotente': {
     'Doutrinas': ['Dois ataques por rodada','+1 Vida','+1 Armadura','+1 Dano','+1 Atacar'],
+    detalhes: 'Armipotente',
   },
   'Psionista': {
     'Doutrinas': ['Telecinesia (mover objetos)','Psicocinese (provocar atordoamento)','Desviar projéteis','Destruir objetos','Ataque psíquico'],
+    detalhes: 'Psionista',
   },
   'Restauralista': {
     'Doutrinas': ['Curar vida biológica','Curar vida sintética','Reviver criatura senciente','Remover radiação ou doença','Retardar dextinto'],
+    detalhes: 'Restauralista',
   },
   'Sociomancer': {
     'Doutrinas': ['Ler mentes','Causar esquecimento','Comandar indivíduo','Amistosidade forçada','Perceber intenção'],
+    detalhes: 'Sociomancer',
   },
   'Tempomaker': {
     'Doutrinas': ['Voltar no tempo','Paralizar tempo','Visão do passado','Prever o futuro','Combate antecipado'],
+    detalhes: 'Tempomaker',
   },
 };
 
@@ -163,20 +175,104 @@ const VERBETES = {
 };
 
 const ARMAMENTOS = {
-  'Bastão de combate': {},
-  'Bastão de energia': {},
-  'Bisturi': {},
-  'Blade de combate': {},
-  'Blade de energia': {},
-  'Blade de luz': {},
-  'Blade elétrica': {},
-  'Blade radioativa': {},
-  'Cassetete elétrico': {},
-  'Cassetete': {},
-  'Corrente': {},
-  'Cortador laser': {},
-  'Faca de combate': {},
-  'Faca laser': {},
+  'Bastão de combate': {
+    'Profissão': 'Militar',
+    'Verbete': 'Atacar corpo-a-corpo',
+    'Bônus de Ataque': '+1',
+    'Dano': '1',
+    'Nível': '1',
+  },
+  'Bastão de energia': {
+    'Profissão': 'Militar',
+    'Verbete': 'Atacar corpo-a-corpo',
+    'Bônus de Ataque': '+1',
+    'Dano': '2',
+    'Nível': '2',
+  },
+  'Bisturi': {
+    'Profissão': 'Militar, Medicina',
+    'Verbete': 'Atacar corpo-a-corpo',
+    'Bônus de Ataque': '+0',
+    'Dano': '1',
+    'Nível': '1',
+  },
+  'Blade de combate': {
+    'Profissão': 'Militar',
+    'Verbete': 'Atacar corpo-a-corpo',
+    'Bônus de Ataque': '+1',
+    'Dano': '2',
+    'Nível': '1',
+  },
+  'Blade de energia': {
+    'Profissão': 'Militar',
+    'Verbete': 'Atacar corpo-a-corpo',
+    'Bônus de Ataque': '+2',
+    'Dano': '2',
+    'Nível': '2',
+  },
+  'Blade de luz': {
+    'Profissão': 'Militar',
+    'Verbete': 'Atacar corpo-a-corpo',
+    'Bônus de Ataque': '+2',
+    'Dano': '3',
+    'Nível': '3',
+  },
+  'Blade elétrica': {
+    'Profissão': 'Militar',
+    'Verbete': 'Atacar corpo-a-corpo',
+    'Bônus de Ataque': '+2',
+    'Dano': '2',
+    'Nível': '2',
+  },
+  'Blade radioativa': {
+    'Profissão': 'Militar',
+    'Verbete': 'Atacar corpo-a-corpo',
+    'Bônus de Ataque': '+1',
+    'Dano': 'Reduz 1 Vida antes do rolar o dano; Dano 1',
+    'Nível': '2',
+  },
+  'Cassetete elétrico': {
+    'Profissão': 'Militar',
+    'Verbete': 'Atacar corpo-a-corpo',
+    'Bônus de Ataque': '+1',
+    'Dano': '2',
+    'Nível': '2',
+  },
+  'Cassetete': {
+    'Profissão': 'Militar',
+    'Verbete': 'Atacar corpo-a-corpo',
+    'Bônus de Ataque': '+1',
+    'Dano': '1',
+    'Nível': '1',
+  },
+  'Corrente': {
+    'Profissão': 'Militar',
+    'Verbete': 'Atacar corpo-a-corpo',
+    'Bônus de Ataque': '+0',
+    'Dano': '2',
+    'Nível': '1',
+  },
+  'Cortador laser': {
+    'Profissão': 'Militar',
+    'Verbete': 'Atacar corpo-a-corpo',
+    'Bônus de Ataque': '+0',
+    'Dano': '2',
+    'Nível': '1',
+  },
+  'Faca de combate': {
+    'Profissão': 'Militar',
+    'Verbete': 'Atacar corpo-a-corpo',
+    'Bônus de Ataque': '+1',
+    'Dano': '1',
+    'Nível': '1',
+  },
+  'Faca laser': {
+    'Profissão': 'Militar',
+    'Verbete': 'Atacar corpo-a-corpo',
+    'Bônus de Ataque': '+1',
+    'Dano': '2',
+    'Nível': '2',
+  },
   'Fuzil (laser)': {},
   'Fuzil (plasma)': {},
   'Fuzil (projéteis)': {},
@@ -349,18 +445,54 @@ function obterValorSelect(id) {
   return elemento.options[elemento.selectedIndex].value;
 }
 
-document.getElementById('arquetipo').addEventListener('input',(event)=>{
+function renderDetalhesEspecie(especie) {
+  if (especie == '') {
+    document.getElementById('especie-info').innerHTML = `Nenhuma Espécie selecionada.\nCom a opção "[todos]" marcada o gerador irá sorteá-la.`;
+  } else {
+    document.getElementById('especie-info').innerHTML = ESPECIES[especie].detalhes;
+  }
+}
+
+document.getElementById('especie').addEventListener('input',(event)=>{
   event.preventDefault();
-  let arquetipo = event.target.value;
+  let especie = event.target.value;
+  renderDetalhesEspecie(especie);
+});
+
+function renderDetalhesArquetipo(arquetipo) {
   if (arquetipo == '') {
     limparSelect('doutrina',()=>{
+      document.getElementById('arquetipo-info').innerHTML = `Nenhum Arquétipo selecionado.\nCom a opção "[todos]" marcada o gerador irá sorteá-lo.`;
+      renderDetalhesDoutrina('');
       console.log(`Nenhum arquétipo selecionado`);
     });
   } else {
     preencherSelectEncadeado([],'doutrina',ARQUETIPOS[arquetipo]['Doutrinas'],()=>{
+      document.getElementById('arquetipo-info').innerHTML = ARQUETIPOS[arquetipo].detalhes;
+      renderDetalhesDoutrina('');
       console.log(`Arquétipo selecionado: ${arquetipo}`);
     });
   }
+}
+
+document.getElementById('arquetipo').addEventListener('input',(event)=>{
+  event.preventDefault();
+  let arquetipo = event.target.value;
+  renderDetalhesArquetipo(arquetipo);
+});
+
+function renderDetalhesDoutrina(doutrina) {
+  if (doutrina == '') {
+    document.getElementById('doutrina-info').innerHTML = `Nenhuma Doutrina selecionada.\nCom a opção "[todos]" marcada o gerador irá sorteá-la.`;
+  } else {
+    document.getElementById('doutrina-info').innerHTML = DOUTRINAS[doutrina]['Descrição'];
+  }
+}
+
+document.getElementById('doutrina').addEventListener('input',(event)=>{
+  event.preventDefault();
+  let doutrina = event.target.value;
+  renderDetalhesDoutrina(doutrina);
 });
 
 document.getElementById('verbete1').addEventListener('input',(event)=>{
@@ -389,7 +521,12 @@ document.getElementById('verbete3').addEventListener('input',(event)=>{
 function iniciar() {
   preencherSelect('arquetipo',Object.keys(ARQUETIPOS),()=>{
     preencherSelect('verbete1',Object.keys(VERBETES),()=>{
-      console.log(`Página carregada: v${VERSAO}`);
+      preencherSelect('armamento',Object.keys(ARMAMENTOS),()=>{
+        renderDetalhesEspecie('');
+        renderDetalhesArquetipo('');
+        renderDetalhesDoutrina('');
+        console.log(`Página carregada: v${VERSAO}`);
+      });
     });
   });
 }

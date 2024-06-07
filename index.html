@@ -88,6 +88,16 @@
         overflow-x: hidden;
         margin-bottom: 0;
       }
+      textarea.info {
+        resize: none;
+        width: 98.5%;
+        border: 0;
+        padding: 4px;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        margin-bottom: 10px;
+        background-color: #F1F1F1;
+      }
       button.primary {
         padding: 8px 12px;
         float: right;
@@ -141,10 +151,18 @@
         </select>
       </div>
 
+      <div class="campos2">
+        <textarea id="especie-info" class="info" rows="6" readonly disabled></textarea>
+      </div>
+
       <div class="campos">
         <span>Arquétipo</span>
         <select id="arquetipo">
         </select>
+      </div>
+
+      <div class="campos2">
+        <textarea id="arquetipo-info" class="info" rows="6" readonly disabled></textarea>
       </div>
 
       <div class="campos">
@@ -152,6 +170,10 @@
         <select id="doutrina" readonly disabled>
           <option value="">[todos]</option>
         </select>
+      </div>
+
+      <div class="campos2">
+        <textarea id="doutrina-info" class="info" rows="3" readonly disabled></textarea>
       </div>
 
       <div class="campos">
