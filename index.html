@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+		<title>Space No More</title>
+		<link rel="icon" href="img/favicon.png" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-size: 1em;
+        font-family: monospace;
+      }
+      header {
+        display: block;
+        width: 100%;
+        height: 70px;
+        box-shadow: 0 0 8px #000000;
+        margin-bottom: 20px;
+
+        background-color: #000000;
+        background-image: url(img/logo.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 300px;
+      }
+      main {
+        display: block;
+        width: 600px;
+        max-width: 95%;
+        box-shadow: 0 0 15px #C0C0C0;
+        border-radius: 10px;
+        margin-bottom: 20px;
+        box-sizing: border-box;
+        padding: 10px;
+        margin: 0 auto;
+      }
+      main::after {
+        display: block;
+        height: 0;
+        content: '';
+        clear: both;
+      }
+      select {
+        display: block;
+        float: right;
+        box-sizing: border-box;
+        width: 68%;
+        border: 1px solid #C0C0C0;
+        padding: 3px;
+        margin-bottom: 10px;
+        font-size: 1.5em;
+        font-weight: bold;
+      }
+      span {
+        box-sizing: border-box;
+        display: block;
+        float: left;
+        width: 30%;
+        padding: 4px;
+        margin-bottom: 10px;
+        text-align: left;
+        font-size: 1.5em;
+        text-transform: uppercase;
+        font-weight: bold;
+        background-color: #74601f;
+        color: #ffffff;
+        line-height: 25px;
+      }
+      span.menor {
+        font-size: 1.3em;
+      }
+      input[type=number] {
+        width: 7.5%;
+        border: 1px solid #C0C0C0;
+        padding: 4px;
+        margin-bottom: 10px;
+        text-align: center;
+      }
+      textarea {
+        resize: none;
+        width: 98.5%;
+        border: 1px solid #C0C0C0;
+        padding: 4px;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        margin-bottom: 0;
+      }
+      button.primary {
+        padding: 8px 12px;
+        float: right;
+        margin-left: 5px;
+        background-color: #000000;
+        color: #ffffff;
+        font-weight: bold;
+        margin-top: 5px;
+        font-size: 1.5em;
+        text-transform: uppercase;
+      }
+      button.second {
+        padding: 4px 8px;
+        float: right;
+        margin-left: 3px;
+        font-weight: bold;
+        background-color: #cccccc;
+        margin-top: 5px;
+      }
+      br {
+        clear: both;
+      }
+      div.campos {
+        display: block;
+        margin-top: 5px;
+        clear: both;
+      }
+      div.campos2 {
+        display: block;
+        margin-top: 0;
+        clear: both;
+      }
+      div.campos::after, div.campos2::after {
+        display: block;
+        height: 0;
+        content: '';
+        clear: both;
+      }
+    </style>
+  </head>
+  <body>
+    <header></header>
+    <main>
+      <div class="campos">
+        <span>Espécie</span>
+        <select id="especie">
+          <option value="">[todos]</option>
+          <option value="Humano">Humano</option>
+          <option value="Projeção">Projeção</option>
+          <option value="Sintético">Sintético</option>
+        </select>
+      </div>
+
+      <div class="campos">
+        <span>Arquétipo</span>
+        <select id="arquetipo">
+        </select>
+      </div>
+
+      <div class="campos">
+        <span>Doutrina</span>
+        <select id="doutrina" readonly disabled>
+          <option value="">[todos]</option>
+        </select>
+      </div>
+
+      <div class="campos">
+        <span>Profissão</span>
+        <select id="profissao">
+          <option value="">[todos]</option>
+          <option value="Biologia">Biologia</option>
+          <option value="Computadores">Computadores</option>
+          <option value="Geologia">Geologia</option>
+          <option value="Hiperespaço">Hiperespaço</option>
+          <option value="Maquinário">Maquinário</option>
+          <option value="Medicina">Medicina</option>
+          <option value="Militar">Militar</option>
+          <option value="Pilotagem">Pilotagem</option>
+          <option value="Psicologia">Psicologia</option>
+          <option value="Química">Química</option>
+          <option value="Robótica">Robótica</option>
+          <option value="Xenobiologia">Xenobiologia</option>
+        </select>
+      </div>
+
+      <div class="campos">
+        <span>Verbetes</span>
+        <select id="verbete1">
+          <option value="">[todos]</option>
+        </select>
+      </div>
+      <div class="campos2">
+        <select id="verbete2" readonly disabled>
+          <option value="">[todos]</option>
+        </select>
+      </div>
+      <div class="campos2">
+        <select id="verbete3" readonly disabled>
+          <option value="">[todos]</option>
+        </select>
+      </div>
+
+      <div class="campos">
+        <span>Equipamento</span>
+        <select id="equipamento">
+          <option value="">[todos]</option>
+          <option value="Analisar quimicamente">Analisar quimicamente</option>
+        </select>
+      </div>
+
+      <div class="campos">
+        <span>Armamento</span>
+        <select id="armamento">
+          <option value="">[todos]</option>
+          <option value="Analisar quimicamente">Analisar quimicamente</option>
+        </select>
+      </div>
+
+      <textarea id="resultado" rows="20"></textarea>
+
+      <div class="campos">
+        <button class="primary" type="button" id="rolar">Gerar personagem</button>
+      </div>
+    </main>
+
+    <script type="text/javascript" src="scripts/scripts.js"></script>
+  </body>
+</html>
