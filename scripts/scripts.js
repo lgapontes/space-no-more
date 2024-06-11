@@ -22,69 +22,72 @@ const ARQUETIPOS = {
     detalhes: 'Armipotente',
   },
   'Psionista': {
-    'Doutrinas': ['Telecinesia (mover objetos)','Psicocinese (provocar atordoamento)','Desviar projéteis','Destruir objetos','Ataque psíquico'],
+    'Doutrinas': ['Ataque psíquico','Destruir objetos','Desviar projéteis','Mindframe','Telecinesia'],
     detalhes: 'Psionista',
   },
-  'Restauralista': {
-    'Doutrinas': ['Curar vida biológica','Curar vida sintética','Reviver criatura senciente','Remover radiação ou doença','Retardar dextinto'],
+  'Guiacura': {
+    'Doutrinas': ['Curar vida biológica','Curar vida sintética','Remover radiação ou doença','Retardar dextinto','Reviver criatura senciente'],
     detalhes: 'Restauralista',
   },
-  'Sociomancer': {
-    'Doutrinas': ['Ler mentes','Causar esquecimento','Comandar indivíduo','Amistosidade forçada','Perceber intenção'],
+  'Guiamente': {
+    'Doutrinas': ['Amistosidade forçada','Causar esquecimento','Comandar indivíduo','Ler mentes','Perceber intenção'],
     detalhes: 'Sociomancer',
   },
-  'Tempomaker': {
-    'Doutrinas': ['Voltar no tempo','Paralizar tempo','Visão do passado','Prever o futuro','Combate antecipado'],
+  'Cronomancer': {
+    'Doutrinas': ['Combate antecipado','Paralizar tempo','Prever o futuro','Visão do passado','Voltar no tempo'],
     detalhes: 'Tempomaker',
   },
 };
 
 const DOUTRINAS = {
   'Perceber matéria escura': {
-    'Descrição': 'Percebe a presença de Matéria Escura a 20 metros a partir do personagem.',
+    'Descrição': 'Percebe a presença de Matéria Escura a 20 metros a partir da personagem.',
   },
   'Criar combustão': {
-    'Descrição': 'Cria uma chama autoinflamável no ponto visível a no máximo 20 metros a partir do personagem. Esta chama provoca 2 de Dano por 1 Rodada.',
+    'Descrição': 'Cria uma chama autoinflamável em um ponto visível a no máximo 20 metros a partir da personagem. Esta chama provoca 2 de dano por 1 rodada.',
   },
   'Criar área anti-vácuo': {
     'Descrição': 'Cria uma esfera de 3 metros de diâmetro (comporta até 5 indivíduos) que protege contra o vácuo. Duração de 1 minuto. Caso a esfera seja recriada após a duração, será necessário abastecê-la com oxigênio.',
   },
   'Teletransportar': {
-    'Descrição': 'Teletransporta um objeto ou indivíduo para uma posição a no máximo 20 metros de distância a partir do personagem.',
+    'Descrição': 'Teletransporta um objeto ou indivíduo para uma posição a no máximo 20 metros de distância a partir da personagem.',
   },
   'Criar oxigênio': {
     'Descrição': 'Cria oxigênio em uma área de 10 metros cúbicos para no máximo 10 indivíduos por 1 hora. Se a área for maior, até 30 metros quadrados, a duração é de 30 minutos. Se a área for aberta o período é 10 minutos.',
   },
+
   'Dois ataques por rodada': {
-    'Descrição': 'Com esta doutrina o personagem pode executar dois ataques com uma única Ação Principal.',
+    'Descrição': 'Com esta doutrina a personagem pode executar dois ataques com uma Ação Principal.',
   },
   '+1 Vida': {
-    'Descrição': 'Adiciona um ponto de vida ao total do personagem.',
-  },
-  '+1 Armadura': {
-    'Descrição': 'Adiciona um ponto de Armadura ao total do personagem.',
+    'Descrição': 'Adiciona um ponto de Vida Máxima à personagem.',
   },
   '+1 Dano': {
-    'Descrição': 'Adiciona +1 em todo tipo de Dano provocado pelo personagem.',
+    'Descrição': 'Adiciona +1 em todo tipo de Dano provocado pela personagem.',
   },
-  '+1 Atacar': {
-    'Descrição': 'Adiciona um bônus de +1 em todas jogadas de ataque do personagem.',
+  '+1 atacar corpo-a-corpo': {
+    'Descrição': 'Bônus de +1 em todas jogadas de ataque corpo-a-corpo.',
   },
-  'Telecinesia (mover objetos)': {
-    'Descrição': 'Pode mover ou sustentar objetos a uma distância máxima de 20 metros. O peso máximo do objeto é de 50 quilos.',
+  '+1 atacar à distância': {
+    'Descrição': 'Bônus de +1 em todas jogadas de ataque à distância.',
   },
-  'Psicocinese (provocar atordoamento)': {
-    'Descrição': 'Atordoa um indivíduo por 1 rodada a uma distância máxima de 20 metros.',
+
+  'Ataque psíquico': {
+    'Descrição': 'Afeta um alvo senciente com uma onda psíquica que provoca 2 de Dano. Pode alcançar um indivíduo visível a até 20 metros.',
+  },
+  'Destruir objetos': {
+    'Descrição': 'Destrói objetos a uma distância máxima de 20m. A massa total do objeto não pode ultrapassar 2 quilos. Não funciona em seres sencientes.',
   },
   'Desviar projéteis': {
     'Descrição': 'Como uma Ação Reativa, um personagem pode declarar interceptar projéteis disparados contra um alvo. O alvo deve estar a no máximo 20 metros de distância e os projéteis devem ser conduzidos para alguma direção. Funciona com qualquer tipo de projétil, seja físico, de plasma, laser ou energia. Disparos de radiação ou fusão nuclear não são afetados.',
   },
-  'Destruir objetos': {
-    'Descrição': 'Destrói objetos pequenos a uma distância máxima de 20 metros. A massa total do objeto não pode ultrapassar 5 quilos. Armas comuns se enquadram nesta métrica, mas Armas Pesadas, Escudos ou Armaduras não.',
+  'Mindframe': {
+    'Descrição': 'Atordoa um indivíduo por 1 rodada a uma distância máxima de 20 metros.',
   },
-  'Ataque psíquico': {
-    'Descrição': 'Afeta um alvo senciente com uma onda psíquica que provoca 2 de Dano. Pode alcançar um indivíduo visível a até 20 metros.',
+  'Telecinesia': {
+    'Descrição': 'Pode mover ou sustentar objetos a uma distância máxima de 20 metros. O peso máximo do objeto é de 50 quilos.',
   },
+
   'Curar vida biológica': {
     'Descrição': 'Cura 3 pontos de Vida de um indivíduo da espécie Humana. O indivíduo deve estar a 3 metros. Também se aplica a animais ou alienígenas biológicos.',
   },
@@ -100,6 +103,7 @@ const DOUTRINAS = {
   'Retardar dextinto': {
     'Descrição': 'Quando um personagem esgota seu marcador de Matéria Escura, ficando com zero pontos, ele é afetado pelo Dextinto, morrendo em 1 rodada. Com uma Ação Reativa o personagem pode retardar esse feito por 10 minutos.',
   },
+
   'Ler mentes': {
     'Descrição': 'Com essa doutrina o jogador pode perguntar ao narrador uma pergunta a respeito do pensamento de uma criatura controlada por ele, sendo que a resposta deve compor apenas as opções "sim", "não", ou "indiferente". Caso o personagem seja de outro jogador, quem responderá será o jogador. Em ambos os casos a resposta deve ser sincera.',
   },
@@ -115,6 +119,7 @@ const DOUTRINAS = {
   'Perceber sensação': {
     'Descrição': 'Com essa doutrina um jogador pode fazer uma pergunta ao narrador a respeito da sensação de um personagem. A resposta deve ser sincera, mas restrita a casos brandos como "ele vai atacar" ou "ele está com medo".',
   },
+
   'Voltar no tempo': {
     'Descrição': 'Esta doutrina permite ao jogador voltar a narrativa em uma cena ou, em combate, uma rodada. Neste caso ele pode por exemplo narrar outra ação ou até mesmo rerolar dados. Não pode ser utilizada com Ação Reativa - ou seja, em combates, deve estar na vez do personagem. O retorno da cena envolve todos os elementos envolvidos a até 3 metros cúbicos a partir da posição do personagem. Não funciona em caso de morte ou dextinto - a criatura continua morta.',
   },
@@ -133,13 +138,15 @@ const DOUTRINAS = {
 };
 
 const PROFISSAO = {
-  'Biologia': {},
+  'Botânica': {},
+  'Combatente': {},
   'Computadores': {},
+  'Criminoso': {},
+  'Desportista': {},
   'Geologia': {},
   'Hiperespaço': {},
   'Maquinário': {},
   'Medicina': {},
-  'Militar': {},
   'Pilotagem': {},
   'Psicologia': {},
   'Química': {},
@@ -147,12 +154,15 @@ const PROFISSAO = {
   'Xenobiologia': {},
 };
 
+Aquele que estuda a origem, evolução, composição, estrutura e história dos planetas. Qualquer ação relacionada à crosta ou às alterações que ocorrem desde a origem dos planetas, tão como o estudo de rochas ou a geografia dos corpos celestes estão contempladas.
+
 const VERBETES = {
   'Analisar quimicamente': {},
   'Arremessar objetos': {},
   'Atacar corpo-a-corpo': {},
   'Caminhar no espaço': {},
   'Convencer indivíduos': {},
+  'Curar ferimentos': {},
   'Enganar indivíduos': {},
   'Esconder rapidamente': {},
   'Estudar alienígenas': {},
@@ -168,7 +178,6 @@ const VERBETES = {
   'Pesquisar física quântica': {},
   'Pilotar nave': {},
   'Praticar acrobacia': {},
-  'Realizar primeiros socorros': {},
   'Reparar sintéticos e projeções': {},
   'Usar armas de fogo': {},
   'Usar explosivos': {},
