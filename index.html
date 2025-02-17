@@ -72,6 +72,9 @@
       span.menor {
         font-size: 1.3em;
       }
+      span.muito-menor {
+        font-size: 1.1em;
+      }
       input[type=number] {
         width: 7.5%;
         border: 1px solid #C0C0C0;
@@ -120,6 +123,22 @@
       br {
         clear: both;
       }
+
+      div.texto {
+        display: block;
+        margin-top: 5px;
+        margin-bottom: 15px;
+        clear: both;
+        background-color: #BDBB9C;
+        padding: 5px;
+        font-size: 1.2em;
+      }
+      div.texto > a,
+      div.texto > a:hover,
+      div.texto > a:active {
+        color: #74601f;
+      }
+
       div.campos {
         display: block;
         margin-top: 5px;
@@ -141,6 +160,16 @@
   <body>
     <header></header>
     <main>
+      <div class="texto">
+        Este gerador foi criado para o jogo <b>Space No More</b> do canal <a href="https://www.youtube.com/@flechamagica">Flecha Mágica</a>. Ele foi viabilizado pelo projeto <a href="https://catarse.me/flechamagica">Pega Essa Flecha</a>. Apoie o Flecha Mágica, jogue conosco e ajude na publicação de outros jogos gratuitos como este para a comunidade de RPG nacional.
+        <br><br>
+        Links importantes:
+        <br>
+        <a href="Space_No_More-Ficha_Editavel.pdf">Ficha Editável - Space No More</a>
+        <br>
+        <a href="https://www.flechamagica.com/space-no-more">PDF do RPG Space No More</a>
+      </div>
+
       <div class="campos">
         <span>Espécie</span>
         <select id="especie">
@@ -180,6 +209,7 @@
         <span>Profissão</span>
         <select id="profissao">
           <option value="">[todos]</option>
+          <!--
           <option value="Biologia">Biologia</option>
           <option value="Computadores">Computadores</option>
           <option value="Geologia">Geologia</option>
@@ -192,6 +222,7 @@
           <option value="Química">Química</option>
           <option value="Robótica">Robótica</option>
           <option value="Xenobiologia">Xenobiologia</option>
+          -->
         </select>
       </div>
 
@@ -213,10 +244,9 @@
       </div>
 
       <div class="campos">
-        <span>Equipamento</span>
+        <span class="menor">Equipamento</span>
         <select id="equipamento">
           <option value="">[todos]</option>
-          <option value="Analisar quimicamente">Analisar quimicamente</option>
         </select>
       </div>
 
@@ -224,7 +254,13 @@
         <span>Armamento</span>
         <select id="armamento">
           <option value="">[todos]</option>
-          <option value="Analisar quimicamente">Analisar quimicamente</option>
+        </select>
+      </div>
+
+      <div class="campos">
+        <span class="muito-menor">Personalidade</span>
+        <select id="personalidade">
+          <option value="">[todas]</option>
         </select>
       </div>
 
@@ -235,6 +271,7 @@
       </div>
     </main>
 
+    <script type="text/javascript" src="scripts/dados.js"></script>
     <script type="text/javascript" src="scripts/scripts.js"></script>
   </body>
 </html>
