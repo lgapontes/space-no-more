@@ -15,13 +15,38 @@ function criarOptionCompleto(value,html) {
   return option;
 }
 
-function preencherSelect(id,lista,callback) {
+function formatarItem(nome, dict) {
+  let formatado = nome;
+  if ('Bônus' in dict[nome]) {
+    formatado += `, Bônus ${dict[nome]['Bônus']}`;
+  }
+  if ('Dano' in dict[nome]) {
+    formatado += `, Dano ${dict[nome]['Dano']}`;
+  }
+  return formatado;
+}
+
+function preencherSelect(id,entrada,callback) {
   let select = document.getElementById(id);
   select.innerHTML = '';
   select.appendChild(criarOptionCompleto('','[todos]'));
 
+  let lista = [];
+  let ehDict = false;
+  if (entrada.constructor === Array) {
+    lista = entrada;
+  } else {
+    ehDict = true;
+    lista = Object.keys(entrada);
+  }
+
   lista.forEach((item, i) => {
-    select.appendChild(criarOption(item));
+    let html = item;
+    if (ehDict) {
+      html =  formatarItem(item, entrada);
+    }
+
+    select.appendChild(criarOptionCompleto(item,html));
 
     if (i == (lista.length - 1)) {
       select.removeAttribute('readonly');
@@ -321,14 +346,14 @@ function rolarPersonagem(callback) {
 
     let equipamento = obterValorSelect('equipamento');
     if (naoFoiSelecionado(equipamento)) {
-      equipamento = obterItemSorteado(EQUIPAMENTOS);
+      equipamento = obterItemSorteado(Object.keys(EQUIPAMENTOS));
     }
 
     let interponder = 'Interponder de Matéria Escura';
 
     let armamento = obterValorSelect('armamento');
     if (naoFoiSelecionado(armamento)) {
-      armamento = obterItemSorteado(ARMAMENTOS);
+      armamento = obterItemSorteado(Object.keys(ARMAMENTOS));
     }
 
     let creditos = '100';
@@ -356,8 +381,13 @@ Profissão: ${profissao}
 
 Verbetes: ${listaVerbetes.join(', ')}
 
-Equipamentos: ${interponder}, ${equipamento}
-Armamentos: ${armamento}
+Equipamentos:
+${formatarItem(interponder, EQUIPAMENTOS)}
+${formatarItem(equipamento, EQUIPAMENTOS)}
+
+Armamentos:
+${formatarItem(armamento,ARMAMENTOS)}
+
 Créditos: ${creditos}
 `;
 
